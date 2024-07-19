@@ -1,0 +1,107 @@
+.container-grid {
+  max-width: 430px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  // grid-template-rows: repeat(6, 1fr);
+  gap: 2px;
+  background: #404040;
+  // padding-top: 2px;
+}
+
+.cell-wrapper {
+  min-width: 50px;
+  min-height: 80px;
+  background: #1e1f21;
+}
+
+.cell-wrapper-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #1e1f21;
+  border-bottom: #404040;
+  margin-bottom: 2px;
+}
+
+.cell-wrapper-days {
+  min-width: 50px;
+  min-height: 24px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1px;
+}
+.cell-weekend {
+  min-width: 50px;
+  min-height: 80px;
+  background: #272829;
+  background-color: #2e2f31;
+}
+
+
+.row-in-cell {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.day-wrapper {
+  height: 31px;
+  width: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+
+
+.current-month {
+  color: #fff;
+}
+
+.other-month {
+  color: #888;
+}
+
+.current-day {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-list {
+  margin: unset;
+  list-style-position: inside;
+  padding-left: 4px;
+  &-btn {
+    position: relative;
+    left: -14px;
+    text-overflow: hidden;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 114px;
+    border: unset;
+    color: #DDDDDD;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+}
+
+@media (max-width: 767px) {
+}
+
+@media (min-width: 768px) and (max-width: 931px) {
+  .container-grid {
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 932px) {
+  .container-grid {
+    max-width: 1520px;
+  }
+}

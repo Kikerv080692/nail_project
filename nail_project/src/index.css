@@ -1,0 +1,23 @@
+:root {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #332e2b;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+
+
+
+

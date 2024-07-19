@@ -1,0 +1,41 @@
+
+  .container-wrapper {
+    padding-top: 80px;
+  }
+  .container-wrapper h1 {
+    display: flex;
+    justify-content: center;
+    color: rgb(229, 18, 155);
+  }
+
+  tr td:first-child {
+    text-align: left;
+    color: rgb(229, 18, 155);
+
+  }
+
+  td, th {
+    padding: 8px 30px; 
+    font-size: 24px;
+    color: rgb(229, 18, 155);
+
+  }
+
+  .discount {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    color: rgb(13, 182, 13);
+  }
+
+  @media (max-width: 767px ){
+    .container-wrapper {
+      padding-top: 40px;
+    }
+    .discount {
+      padding-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+  
