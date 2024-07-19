@@ -10,7 +10,7 @@ export const Footer = styled.footer`
 h1{
     font-family: ${(p => p.theme.fonts.fancy)};
     font-size: ${p => p.theme.space[5]}px;
-    color: rgb(229, 18, 155);
+    color:${p => p.theme.colors.headers};
 }
 ` 
 export const IMG = styled.div`

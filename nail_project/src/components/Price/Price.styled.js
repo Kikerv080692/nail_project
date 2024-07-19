@@ -8,6 +8,6 @@ h1 {
     font-size: ${(p) => p.theme.space[5]}px;
     display: flex;
     justify-content: center;
-    color: rgb(229, 18, 155);
+    color: ${p => p.theme.colors.headers};
 }
 `

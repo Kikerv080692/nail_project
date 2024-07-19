@@ -8,6 +8,6 @@ display: flex;
 justify-content: center;
 h1{
     font-family: ${p => p.theme.fonts.fancy};
-    color: rgb(229, 18, 155);
+    color: ${p => p.theme.colors.headers};
 }
 `

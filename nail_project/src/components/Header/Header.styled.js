@@ -20,7 +20,8 @@ Button {
   font-weight: 500;
   border-radius: 8px;
   border: none;
-  background-color: rgb(144, 42, 42);
+  background-color: ${p => p.theme.colors.headers};
   color: white;
+  box-shadow: 0 0 15px rgb(187, 24, 130);
 }
 `
