@@ -1,10 +1,11 @@
-import "./Interesting.scss";
+
+import * as SC from './Interesting.styled'
 
 export const Interesting = () => {
   return (
-    <section>
-      <div>
-        <h2 className="header">Советы для красивых и здоровых ногтей</h2>
+    <SC.Section>
+      <SC.WrapperFirst>
+        <SC.Header>Советы для красивых и здоровых ногтей
         <h3>Обрезать кутикулу</h3>
         <p>
           «Не обрезать, а сдвигать», — это правило повторяют все нейл-мастера
@@ -13,25 +14,27 @@ export const Interesting = () => {
           грубее она будет. Чтобы сделать ее мягче, используйте масла, которые
           не только увлажняют и питают кожу, но и замедляют рост кутикулы.
         </p>
-      </div>
+
+        </SC.Header>
+      </SC.WrapperFirst>
       <div>
-        <h2 className="header">Интересные факты про маникюр</h2>
-        <div className="text_wrapper">
+        <SC.Header>Интересные факты про маникюр</SC.Header>
+        <SC.TextWrapper >
           <p>Ногтевая пластина может востановится только за 4 месяца</p>
-        </div>
-        <div className="text_wrapper">
+        </SC.TextWrapper>
+        <SC.TextWrapper >
           <p>
             Все вещества которые используются для роста ногтей необходимо
             наносить на кутикулу. Посколько там происходит рост ногтя
           </p>
-        </div>
-        <div className="text_wrapper">
+        </SC.TextWrapper>
+        <SC.TextWrapper >
           <p>
             При долгом контакте с горячей водою. Ногтевая пластина размокает и
             сцепка между ногтем и покрытием лаком ослабивает
           </p>
-        </div>
+        </SC.TextWrapper>
       </div>
-    </section>
+    </SC.Section>
   );
 };

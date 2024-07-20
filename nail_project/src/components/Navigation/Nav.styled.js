@@ -12,6 +12,8 @@ export const Nav = styled.nav`
   margin-bottom: 50px;
   background: rgb(187, 24, 130);
   box-shadow: 0 0 15px rgb(187, 24, 130);
+  margin-bottom: 50px;
+  height: 50px;
   h4 {
     margin: 0;
     cursor: pointer;
