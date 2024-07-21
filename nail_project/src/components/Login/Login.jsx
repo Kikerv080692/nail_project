@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/auth/authOperation";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const isLocation = useLocation()
+  console.log(isLocation)
 const dispatch = useDispatch()
   const handleInputChange = (e) => {
     const { value, placeholder } = e.target;
@@ -28,6 +30,7 @@ const dispatch = useDispatch()
   }
 
 return (
+  isLocation.pathname === '/login' ?
   <>
   <form onSubmit={handleSubmit} >
     <input type="text" placeholder="Email" value={email} onChange={handleInputChange} />
@@ -35,7 +38,7 @@ return (
     <button type='submit'>Log in</button>
   </form>
   <NavLink to="/">Home</NavLink>
-  </>
+  </> : <></>
 )
 }
 

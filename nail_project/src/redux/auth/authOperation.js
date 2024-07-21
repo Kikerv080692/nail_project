@@ -40,3 +40,18 @@ export const register = createAsyncThunk('auth/register', async (credentials, th
         return thunkAPI.rejectWithValue(error.message)
     }
  })
+
+ export const refreshUser = createAsyncThunk('/auth/refresh', async (_, thunkAPI) => {
+  const state = thunkAPI.getState()
+  const persistToken = state.auth.token
+  if(!persistToken){
+    return thunkAPI.rejectWithValue('error')
+  }
+  try {
+    setAuthHeaders(persistToken)
+    const {data} = await axios.get('/auth/current')
+    return data
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message)
+  }
+ })
