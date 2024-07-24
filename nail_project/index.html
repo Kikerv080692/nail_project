@@ -11,6 +11,27 @@
     <div id="root"></div>
     <div id="modal-root"></div>
 
+
+    <!-- <div>
+      <ul>
+        {[...Array(7)].map((_, index) => (
+          <li key={index}>
+            <span>
+              {moment()
+                .day(index + 1)
+                .format("ddd")
+                .toUpperCase()}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <div>
+        {daysArray.map((dayItem) => (
+          <CalendarDays isCurrentDay={isCurrentDay} dayItem={dayItem} />
+        ))}
+      </div>
+    </div> -->
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

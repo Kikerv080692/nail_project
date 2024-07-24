@@ -1,6 +1,6 @@
 import { useAuth } from "../../../hooks/useAuth";
 import { useState } from "react";
-
+import * as SC from './CalendarDays.styled'
 import { CastomModal } from "../../Modal/CastomModal";
 
 export const CalendarDays = ({ isCurrentDay, dayItem}) => {
@@ -11,17 +11,17 @@ export const CalendarDays = ({ isCurrentDay, dayItem}) => {
     ;
   };
   return (
-    <div>
+    <SC.CellWrapper >
       <div onClick={isLoggedIn ? toggleModal : null}>
         {isCurrentDay(dayItem) ? (
-          <div>{dayItem.format("D")}</div>
+          <SC.CurrentDay>{dayItem.format("D")}</SC.CurrentDay>
         ) : (
           dayItem.format("D")
         )}
       </div>
       {isOpenModal && (
-         <CastomModal toggleModal={toggleModal}>dmalknflfnfnsdlf</CastomModal>
+         <CastomModal toggleModal={toggleModal}></CastomModal>
       )}
-    </div>
+    </SC.CellWrapper>
   );
 };

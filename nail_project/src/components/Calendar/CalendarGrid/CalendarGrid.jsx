@@ -61,16 +61,7 @@ function CalendarGrid({ startDay, today, totalDays, events }) {
               </div>
               <div className="event-list">
               <div>Start: {dayItem.format('X')}</div>
-              {
-                events.filter(event => event.date >= dayItem.format('X') && event.date <= dayItem.clone().endOf('day').format('X'))
-                .map(event => (
-                  <li>
-                  <button key={event.id} className="event-list-btn">
-                   {event.title}
-                  </button>
-                  </li>
-                ))
-              }
+            
               <div>End: {dayItem.clone().endOf('day').format('X')}</div>
 
               </div>
