@@ -11,6 +11,7 @@ export const theme = Object.freeze({
       xs: 12,
       s: 14,
       m: 16,
+      xm: 18,
       ml: 24,
       l: 32,
       xl: 64,
@@ -33,12 +34,15 @@ export const theme = Object.freeze({
       backdropBackground: '#101510a1',
       modalBackground: '#fff',
       backdropBackgroundHover: '#0056b3',
-  
+      backForCalendar: '#1e1f21',
+      backForColor: '#dcdddd',
       deletBtn: 'lightcoral',
       tableBorderColor: 'rgb(0, 128, 255)',
       tableBgcHead: '#bcebdd',
       tableBgc: '#f8e391',
-      phonebookBcg: 'lightcyan',
+      backForCalendarButton: '#565759',
+      colorForCalendarButton: '#e6e6e6'
+     
     },
     radii: {
       none: '0',

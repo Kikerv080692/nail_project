@@ -13,7 +13,7 @@ import moment from "moment";
 // `
 
 function CalendarGrid({ startDay, today, totalDays, events }) {
-  const day = startDay.clone();
+  const day = startDay.clone().subtract(1, 'day');
   const daysArray = [
     ...Array(totalDays)
       .keys()
