@@ -1,9 +1,10 @@
 import moment from "moment";
 import { CalendarDays } from "../CalendarDays/CalendarDays";
 import * as SC from './CalendarGrid.styled'
+import 'moment/locale/uk'
+moment.locale('uk')
 
 export const CalendarGrid = ({ today, startDay }) => {
-  
   const totalDays = 42;
   
   const day = startDay.clone().subtract(0, "day");

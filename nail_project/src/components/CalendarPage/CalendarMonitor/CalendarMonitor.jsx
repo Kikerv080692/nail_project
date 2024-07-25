@@ -15,17 +15,16 @@ export const CalendarMonitor = (
         </SC.MonthWrapper>
         <SC.ButtonWrapper>
           <SC.Button type="button" onClick={prevHandler}>
-            PrevMont
-          </SC.Button>
-          <SC.Button type="button" onClick={nextHandler}>
-            NextMonth
+          &lt;
           </SC.Button>
           <SC.Button type="button" onClick={todayHandler}>
             Today
           </SC.Button>
+          <SC.Button type="button" onClick={nextHandler}>
+          &gt;
+          </SC.Button>
         </SC.ButtonWrapper>
       </SC.MenuWrapper>
-      
     </div>
   );
 };

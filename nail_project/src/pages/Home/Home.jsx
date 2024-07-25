@@ -12,30 +12,30 @@ import { useEffect, useState } from "react";
 import { CalendarPage } from "../../components/CalendarPage/CalendarPage.jsx"
 
 // const count = `/events?date_gte=${startDayQuery}&date_lte=${endDayQuery}`
-const totalDays = 42;
+// const totalDays = 42;
 
 export const Home = () => {
-  const [today, setToday] = useState(moment());
-  const startDay = today.clone().startOf("month").startOf("week");
-  const endDay = moment().endOf("month").endOf("week");
+  // const [today, setToday] = useState(moment());
+  // const startDay = today.clone().startOf("month").startOf("week");
+  // const endDay = moment().endOf("month").endOf("week");
 
-  const prevHandlerDay = () => {
-    console.log("prev");
-    setToday((prev) => prev.clone().subtract(1, "month"));
-  };
-  const todayHandlerDay = () => {
-    console.log("today");
-    setToday(moment());
-  };
-  const nextHandlerDay = () => {
-    console.log("next");
-    setToday((prev) => prev.clone().add(1, "month"));
-  };
+  // const prevHandlerDay = () => {
+  //   console.log("prev");
+  //   setToday((prev) => prev.clone().subtract(1, "month"));
+  // };
+  // const todayHandlerDay = () => {
+  //   console.log("today");
+  //   setToday(moment());
+  // };
+  // const nextHandlerDay = () => {
+  //   console.log("next");
+  //   setToday((prev) => prev.clone().add(1, "month"));
+  // };
 
-  const startDayQuery = startDay.clone().format("X");
-  const endDayQuery = endDay.clone().add(totalDays, 'days').format("X");
-  console.log("startDayQuery:", startDayQuery);
-  console.log("endDayQuery:", endDayQuery);
+  // const startDayQuery = startDay.clone().format("X");
+  // const endDayQuery = endDay.clone().add(totalDays, 'days').format("X");
+  // console.log("startDayQuery:", startDayQuery);
+  // console.log("endDayQuery:", endDayQuery);
 
 
   return (
@@ -44,12 +44,12 @@ export const Home = () => {
       <Login />
       <Nav />
       <Header />
+      <CalendarPage />
       <Nails />
       <Interesting />
       <Price />
       <Footer />
-      <CalendarPage />
-      <Calendar
+      {/* <Calendar
         startDay={startDay}
         today={today}
         prevHandlerDay={prevHandlerDay}
@@ -57,7 +57,7 @@ export const Home = () => {
         nextHandlerDay={nextHandlerDay}
         totalDays={totalDays}
        
-      />
+      /> */}
     </div>
   );
 };

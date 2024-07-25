@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
+
+
 export const MenuWrapper = styled.div`
  display: flex;
   justify-content: space-between;
-  background: ${p => p.theme.colors.backForCalendar};
-  color: ${p => p.theme.colors.backForColor};
+  /* background: ${p => p.theme.colors.backForCalendar}; */
+  /* color: ${p => p.theme.colors.backForColor}; */
   padding: 12px 10px;
   align-items: center;
 `

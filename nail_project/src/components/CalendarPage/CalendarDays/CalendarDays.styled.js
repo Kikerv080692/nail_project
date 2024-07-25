@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const CurrentDay = styled.div`
- height: 30px;
-  width: 30px;
+ height: 20px;
+  width: 20px;
   border-radius: 50%;
   background: red;
   display: flex;
@@ -10,7 +10,7 @@ export const CurrentDay = styled.div`
   align-items: center;
 `
 export const CellWrapper = styled.div`
-  min-width: 50px;
-  min-height: 80px;
-  background: #1e1f21;
+  min-width: 15px;
+  min-height: 15px;
+  /* background: #1e1f21; */
 `

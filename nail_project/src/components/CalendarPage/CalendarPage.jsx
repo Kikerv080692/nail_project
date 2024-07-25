@@ -2,6 +2,10 @@ import moment from "moment";
 import { useState } from "react";
 import { CalendarMonitor } from "./CalendarMonitor/CalendarMonitor";
 import { CalendarGrid } from "./CalendarGrid/CalendarGrid";
+import * as SC from './CalendarPage.styled'
+import 'moment/locale/uk'
+
+moment.locale('uk')
 
 export const CalendarPage = () => {
   const [today, setToday] = useState(moment());
@@ -20,7 +24,7 @@ export const CalendarPage = () => {
   };
 
   return (
-    <>
+    <SC.WrapperAllCalendar>
       <CalendarMonitor
         prevHandler={prevHandler}
         nextHandler={nextHandler}
@@ -28,6 +32,6 @@ export const CalendarPage = () => {
         today={today}
       />
       <CalendarGrid startDay={startDay} today={today} />
-    </>
+    </SC.WrapperAllCalendar>
   );
 };
