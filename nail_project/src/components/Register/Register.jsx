@@ -1,15 +1,16 @@
 import { useState } from "react";
-import {useDispatch} from 'react-redux'
+import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/authOperation";
 import { useLocation } from "react-router-dom";
+import * as SC from "./Register.styled";
 
 export const Register = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const location = useLocation()
-  console.log(location)
+  const location = useLocation();
+  console.log(location);
   const handleInputChange = (e) => {
     const { value, placeholder } = e.target;
     switch (placeholder) {
@@ -29,25 +30,33 @@ export const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(register({name, email, password}))
+    dispatch(register({ name, email, password }));
   };
-  return (
-    location.pathname === '/register' ? 
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Name"
-        value={name}
-        onChange={handleInputChange}
-      />
-      <input type="text" placeholder="Email" value={email} onChange={handleInputChange} />
-      <input
-        type="text"
-        placeholder="Password"
-        value={password}
-        onChange={handleInputChange}
-      />
-      <button type="submit" >Register</button>
-    </form> : <></>
-  ); 
+  return location.pathname === "/register" ? (
+    <SC.Container>
+      <SC.Form onSubmit={handleSubmit}>
+        <SC.Input
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={handleInputChange}
+        />
+        <SC.Input
+          type="text"
+          placeholder="Email"
+          value={email}
+          onChange={handleInputChange}
+        />
+        <SC.Input
+          type="text"
+          placeholder="Password"
+          value={password}
+          onChange={handleInputChange}
+        />
+        <SC.Button type="submit">Register</SC.Button>
+      </SC.Form>
+    </SC.Container>
+  ) : (
+    <></>
+  );
 };

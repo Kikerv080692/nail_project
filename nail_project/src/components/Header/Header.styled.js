@@ -24,13 +24,13 @@ export const ButtonBox = styled.div`
     color: white;
     box-shadow: 0 0 15px rgb(187, 24, 130);
     &:hover {
-    background: ${(p) => p.theme.colors.backForHoverButton};
-  }
-  }
-  @media (min-width: 1024px) {
-    padding-top: 100px;
+      background: ${(p) => p.theme.colors.backForHoverButton};
+    }
   }
   @media (min-width: 767px) and (max-width: 1023px) {
+  }
+  @media (min-width: 1023px) {
+    padding-top: 100px;
   }
 `;
 
@@ -44,7 +44,7 @@ export const Foto = styled.div`
     border-radius: 6px;
   }
 
-  @media (min-width: 1024px) and (max-width: 1400px) {
+  @media (min-width: 1023px) and (max-width: 1700px) {
     img {
       max-width: 700px;
       max-height: 700px;
@@ -77,7 +77,7 @@ export const TextWrapperH2 = styled.div`
   @media (min-width: 1023px) and (max-width: 1800px) {
     top: 720px;
     h2 {
-      padding-left: 100px;
+      padding-left: 120px;
     }
   }
 `;

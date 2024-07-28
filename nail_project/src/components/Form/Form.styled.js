@@ -42,6 +42,9 @@ export const Input = styled.input`
 export const Button = styled.button`
   background: ${(p) => p.theme.colors.backForButton};
   color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
   transition: background 0.3s, box-shadow 0.3s;
   &:hover {
     background: ${(p) => p.theme.colors.backForHoverButton};

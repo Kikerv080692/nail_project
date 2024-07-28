@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/auth/authOperation";
 import { NavLink, useLocation } from "react-router-dom";
-
+import * as SC from './Login.styled'
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -31,14 +31,14 @@ const dispatch = useDispatch()
 
 return (
   isLocation.pathname === '/login' ?
-  <>
-  <form onSubmit={handleSubmit} >
-    <input type="text" placeholder="Email" value={email} onChange={handleInputChange} />
-    <input type="text" placeholder="Password" value={password} onChange={handleInputChange} />
-    <button type='submit'>Log in</button>
-  </form>
+  <SC.Container>
+  <SC.Form onSubmit={handleSubmit} >
+    <SC.Input type="text" placeholder="Email" value={email} onChange={handleInputChange} />
+    <SC.Input type="text" placeholder="Password" value={password} onChange={handleInputChange} />
+    <SC.Button type='submit'>Log in</SC.Button>
+  </SC.Form>
   <NavLink to="/">Home</NavLink>
-  </> : <></>
+  </SC.Container> : <></>
 )
 }
 

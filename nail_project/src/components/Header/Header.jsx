@@ -1,4 +1,4 @@
-import React from "react";
+
 import Button from "../Button/Button";
 import nail from "../../images/nail.jpg";
 import * as SC from './Header.styled'
