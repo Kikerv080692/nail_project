@@ -4,6 +4,7 @@ export const WrapperWeekDays = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   margin-bottom: 10px;
+  color: ${p => p.theme.colors.headers};
 `;
 
 export const CalendarGrid = styled.div`

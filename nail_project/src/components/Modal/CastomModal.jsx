@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import * as SC from './Modal.styled'
 const modalRoot = document.querySelector("#modal-root")
 
-export const CastomModal = ({children, toggleModal}) => {
+export const CastomModal = ({children, toggleModal, }) => {
   
   useEffect(() => {
     const closeModalESC = (event) => {

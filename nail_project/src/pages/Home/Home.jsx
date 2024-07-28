@@ -10,6 +10,7 @@ import Price from "../../components/Price/Price.jsx";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { CalendarPage } from "../../components/CalendarPage/CalendarPage.jsx"
+import { Form } from "../../components/Form/Form.jsx";
 
 // const count = `/events?date_gte=${startDayQuery}&date_lte=${endDayQuery}`
 // const totalDays = 42;
@@ -49,15 +50,6 @@ export const Home = () => {
       <Interesting />
       <Price />
       <Footer />
-      {/* <Calendar
-        startDay={startDay}
-        today={today}
-        prevHandlerDay={prevHandlerDay}
-        todayHandlerDay={todayHandlerDay}
-        nextHandlerDay={nextHandlerDay}
-        totalDays={totalDays}
-       
-      /> */}
     </div>
   );
 };

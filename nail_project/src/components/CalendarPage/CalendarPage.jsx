@@ -5,9 +5,9 @@ import { CalendarGrid } from "./CalendarGrid/CalendarGrid";
 import * as SC from './CalendarPage.styled'
 import 'moment/locale/uk'
 
-moment.locale('uk')
 
 export const CalendarPage = () => {
+  moment.locale('uk')
   const [today, setToday] = useState(moment());
   const startDay = today.clone().startOf("month").startOf("week");
   
