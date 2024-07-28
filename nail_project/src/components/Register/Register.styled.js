@@ -18,21 +18,23 @@ export const Container = styled.div`
   align-items: center;
   max-width: 430px;
   height: 100vh;
-  background-color: #eaeaea;
+  background-image: url('../../../public/image/nailBackground.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 export const Input = styled.input`
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(255, 105, 180, 0.6);
   border-radius: 5px;
   transition: box-shadow 0.3s ease-in-out;
 
   &:focus{
     outline: none;
-    box-shadow: 0 4px 12px rgba(80, 150, 90, 0.6);
-    border: 2px solid orange;
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.6);
+    border: 2px solid rgba(255, 105, 180, 0.6);
   }
 `;
 

@@ -9,8 +9,6 @@ export const WrapperForm = styled.div`
   padding: 20px;
   background-color: ${(p) => p.theme.colors.formBackground};
   border-radius: 10px;
-
-  
 `;
 
 export const FormElement = styled.form`

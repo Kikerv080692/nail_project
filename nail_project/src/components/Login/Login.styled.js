@@ -5,8 +5,10 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   max-width: 430px;
-  background: #eaeaea;
   height: 100vh;
+  background-image: url('../../../public/image/nailBackground.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 export const Form = styled.form`
@@ -25,12 +27,12 @@ export const Input = styled.input`
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(255, 105, 180, 0.6);
   transition: box-shadow 0.3s ease-in-out;
   
   &:focus {
-      box-shadow: 0 4px 12px rgba(48, 80, 90, 0.6);
-      border: 1px solid orange;
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.6);
+      border: 1px solid rgba(255, 105, 180, 0.6);
     outline: none;
   }
 `;
