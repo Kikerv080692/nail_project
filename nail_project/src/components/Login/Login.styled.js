@@ -29,7 +29,9 @@ export const Input = styled.input`
   border-radius: 5px;
   border: 1px solid rgba(255, 105, 180, 0.6);
   transition: box-shadow 0.3s ease-in-out;
-  
+  &::placeholder {
+    transition: opacity 0.5s;
+  }
   &:focus {
     box-shadow: 0 4px 12px rgba(255, 105, 180, 0.6);
       border: 1px solid rgba(255, 105, 180, 0.6);

@@ -8,6 +8,7 @@ import Nav from "../../components/Navigation/Nav";
 import { Register } from "../../components/Register/Register";
 import Price from "../../components/Price/Price.jsx";
 import { CalendarPage } from "../../components/CalendarPage/CalendarPage.jsx"
+import { Input } from "../../components/Input/Input.jsx";
 
 
 export const Home = () => {
@@ -22,6 +23,7 @@ export const Home = () => {
       <Nails />
       <Interesting />
       <Price />
+      <Input/>
       <Footer />
     </div>
   );

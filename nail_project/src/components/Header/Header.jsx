@@ -2,8 +2,11 @@
 import Button from "../Button/Button";
 import nail from "../../images/nail.jpg";
 import * as SC from './Header.styled'
+import { useTranslation } from 'react-i18next';
+
 
 const Header = () => {
+  const { t } = useTranslation();
   return (
     <>
       <SC.Header>
@@ -19,8 +22,7 @@ const Header = () => {
       </SC.Header>
         <SC.TextWrapperH3>
           <h3>
-            Делаю уникальный и аккуратный маникюр, придавая вашим ручкам
-            красивый и ухоженный вид
+            {t('header')}
           </h3>
         </SC.TextWrapperH3>
       <SC.ButtonBox >

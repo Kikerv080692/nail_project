@@ -11,29 +11,13 @@ import { refreshUser } from "./redux/auth/authOperation.js";
 
 
 
-// console.log(moment())
-// console.log(moment().startOf('month').startOf('week'))
-// console.log(moment.updateLocale('en', {week: {dow: 1}} ))
-// console.log(moment().startOf('month').startOf('week'))
-// console.log(moment().endOf('month').endOf('week'))
-// console.log(moment().add(1, 'day')) // добавляє один день
-// console.log(moment().subtract(1, 'day')) // забирає один день
-// console.log(startDay.format("YYYY-MM-DD"));
-// console.log(endDay.format("YYYY-MM-DD"));
-
-// const calendar = [];
-// const day = startDay.clone();
-
-// while (!day.isAfter(endDay)) {
-//   console.log(day);
-//   calendar.push(day.clone());
-//   day.add(1, "day");
-// }
 
 
 function App() {
   const {isRefreshing} = useAuth()
   const dispatch = useDispatch()
+
+  
 
 useEffect(() => {
   dispatch(refreshUser())
@@ -45,6 +29,7 @@ useEffect(() => {
       <Route path='/' element={<Home/>}/>
      <Route path = 'register' element={<Register/>}/>
      <Route path = 'login' element={<Login/>}/>
+    
     </Routes>
     
   );
