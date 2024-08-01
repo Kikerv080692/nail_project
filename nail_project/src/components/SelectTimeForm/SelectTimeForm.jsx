@@ -25,7 +25,7 @@ export const SelectTimeForm = ({ days, month }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    addSchedule({ hours, minutes, days, month });
+    addSchedule(  { hours, minutes, days, month });
   };
   console.log('item', item)
   return (
@@ -51,8 +51,8 @@ export const SelectTimeForm = ({ days, month }) => {
       )}
 
       <SC.TimeShowWrapper >
-        {/* {item.map(({ hours, minutes }) => (
-          <div>
+        {/* {data.map(({ hours, minutes, _id }) => (
+          <div key= {_id}>
             {hours}:{minutes}
           </div> 
         ))} */}
