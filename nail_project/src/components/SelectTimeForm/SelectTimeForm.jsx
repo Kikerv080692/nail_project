@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
 import * as SC from './SelectTimeForm.styled'
 import { useAddScheduleMutation } from "../../redux/contacts/schedule";
+import {useGetScheduleQuery} from '../../redux/contacts/schedule'
+import {useDeleteScheduleTimeMutation} from '../../redux/contacts/schedule'
 
 
 export const SelectTimeForm = ({ days, month }) => {
@@ -10,6 +12,9 @@ export const SelectTimeForm = ({ days, month }) => {
   const [item, setItem] = useState([]);
   const { isLoggedIn } = useAuth();
   const [addSchedule] = useAddScheduleMutation()
+  const {data} = useGetScheduleQuery({days, month})
+  const [deleteTime] = useDeleteScheduleTimeMutation()
+
 
   const handleTime = (e) => {
     const { name, value } = e.target;
@@ -51,11 +56,14 @@ export const SelectTimeForm = ({ days, month }) => {
       )}
 
       <SC.TimeShowWrapper >
-        {/* {data.map(({ hours, minutes, _id }) => (
+        {data?.data.map(({ hours, minutes, _id }) => (
           <div key= {_id}>
             {hours}:{minutes}
+            {isLoggedIn && <button onClick={() => deleteTime(_id)}>Delete</button>}
+           
           </div> 
-        ))} */}
+
+        ))}
       </SC.TimeShowWrapper>
     </>
   );

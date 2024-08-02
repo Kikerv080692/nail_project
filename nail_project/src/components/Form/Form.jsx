@@ -3,12 +3,16 @@ import { useAuth } from "../../hooks/useAuth";
 import * as SC from "./Form.styled";
 import { SelectTimeForm } from "../SelectTimeForm/SelectTimeForm";
 
+
+
 export const Form = ({ toggleModal, days, month }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [textArea, setTextArea] = useState("");
   const [selectOptions, setSelectedOptions] = useState("");
   const { isLoggedIn } = useAuth();
+  
+
 
   const handlerForm = (e) => {
     const { value, name } = e.target;
@@ -32,6 +36,9 @@ export const Form = ({ toggleModal, days, month }) => {
   const formSubmit = (e) => {
     e.preventDefault();
   };
+
+  
+
 
   return (
     <SC.WrapperForm>

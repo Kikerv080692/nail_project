@@ -16,7 +16,7 @@ function Nav() {
     useEffect(() => {
       const defaultLanguage = localStorage.getItem('language' || 'en')
       i18n.changeLanguage(defaultLanguage)
-    }, [i18n])
+    }, [])
 
 
   const {isLoggedIn} = useAuth()

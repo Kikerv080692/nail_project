@@ -12,6 +12,7 @@ import {
     PURGE,
     REGISTER,
   } from 'redux-persist';
+import { scheduleApi } from './contacts/schedule';
 
   const middleware = getDefaultMiddleware => [
     ...getDefaultMiddleware({
@@ -19,6 +20,7 @@ import {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
+    scheduleApi.middleware
   ];
 
 
@@ -31,7 +33,8 @@ import {
 
   export const store = configureStore({
     reducer: {
-        [authSlice.name]: persistReducer(authPersistConfig, authSlice.reducer)
+        [authSlice.name]: persistReducer(authPersistConfig, authSlice.reducer),
+        [scheduleApi.reducerPath]: scheduleApi.reducer
     },
     middleware,
     

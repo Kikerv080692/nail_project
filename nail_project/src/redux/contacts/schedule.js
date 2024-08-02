@@ -26,8 +26,8 @@ export const scheduleApi = createApi({
   tagTypes: ["schedule"],
   endpoints: (builder) => ({
     getSchedule: builder.query({
-      query: () => ({
-        url: "/schedule",
+      query: ({days, month}) => ({
+        url: `/schedule?days=${days}&month=${month}`,
         method: "GET",
       }),
       providesTags: ["schedule"],
@@ -40,7 +40,14 @@ export const scheduleApi = createApi({
       }),
       invalidatesTags: ["schedule"],
     }),
+    deleteScheduleTime: builder.mutation({
+      query: (id) => ({
+        url: `/schedule/${id}`,
+        method: 'DELETE',
+      }),
+      invalidatesTags: ["schedule"]
+    })
   }),
 });
 
-export const { useGetScheduleQuery, useAddScheduleMutation } = scheduleApi;
+export const { useGetScheduleQuery, useAddScheduleMutation, useDeleteScheduleTimeMutation } = scheduleApi;
