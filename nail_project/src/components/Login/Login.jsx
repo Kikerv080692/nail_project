@@ -10,9 +10,10 @@ export const Login = () => {
   const isLocation = useLocation()
   console.log(isLocation)
 const dispatch = useDispatch()
+
   const handleInputChange = (e) => {
-    const { value, placeholder } = e.target;
-    switch (placeholder) {
+    const { value, name } = e.target;
+    switch (name) {
       case "Email":
         setEmail(value);
         return;
@@ -27,14 +28,44 @@ const dispatch = useDispatch()
   const handleSubmit = (e) => {
       e.preventDefault()
       dispatch(login({email, password}))
+      setEmail('')
+      setPassword('')
   }
 
 return (
   isLocation.pathname === '/login' ?
   <SC.Container>
   <SC.Form onSubmit={handleSubmit} >
-    <SC.Input type="text" placeholder="Email" value={email} onChange={handleInputChange} />
-    <SC.Input type="text" placeholder="Password" value={password} onChange={handleInputChange} />
+  <SC.ContainerForInputLabel>
+            <SC.FormInput
+              type="text"
+              autoComplete="off"
+              placeholder=" "
+              name="Email"
+              id="Email"
+              value={email}
+              onChange={handleInputChange}
+            />
+            <SC.Label htmlFor="Email" >
+              Email
+            </SC.Label>
+          </SC.ContainerForInputLabel>
+          <SC.ContainerForInputLabel >
+            <SC.FormInput
+              type="password"
+              autoComplete="off"
+              placeholder=" "
+              name="Password"
+              id="Password"
+              value={password}
+              onChange={handleInputChange}
+            />
+            <SC.Label htmlFor="Password" >
+              Password
+            </SC.Label>
+          </SC.ContainerForInputLabel>
+    {/* <SC.Input type="text" placeholder="Email" name="Email" value={email} onChange={handleInputChange} />
+    <SC.Input type="text" placeholder="Password" name="Password" value={password} onChange={handleInputChange} /> */}
     <SC.Button type='submit'>Log in</SC.Button>
   </SC.Form>
   <NavLink to="/">Home</NavLink>

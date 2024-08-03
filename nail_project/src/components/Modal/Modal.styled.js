@@ -17,7 +17,7 @@ export const Overlay = styled.div`
 
 export const Inner = styled.div`
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 5px;
@@ -27,6 +27,8 @@ export const Inner = styled.div`
 
   @media (min-width: 1024px) {
     margin-top: 60px;
+  top: 45%;
+
   }
 
   @media (min-width: 400px) {
@@ -35,11 +37,14 @@ export const Inner = styled.div`
 `;
 
 export const CloseBtn = styled.button`
+width: 15px;
+height: 15px;
   position: absolute;
   top: 5px;
   right: 3px;
-  background: red;
+  background:${(p) => p.theme.colors.backForHoverButton} ;
   border: none;
+  border-radius: 3px;
   outline: none;
   cursor: pointer;
   transition: 250ms linear;

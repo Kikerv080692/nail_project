@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as SC from './SelectTimeForm.styled'
 import { useAuth } from "../../hooks/useAuth";
 
-export const TimeItem = ({hours, minutes, id}) => {
+export const TimeItem = ({hours, minutes, id, deleteTime}) => {
     const [isCheckTime, setIsCheckTime] = useState(false)
     const { isLoggedIn } = useAuth();
     const toggleTime = () => {

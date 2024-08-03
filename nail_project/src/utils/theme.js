@@ -40,6 +40,7 @@ export const theme = Object.freeze({
       backForHoverButton: 'rgb(255, 105, 180)',
       focusInput: '#ff69b4',
       hoverLink: '#40e0d0',
+      input: 'rgba(255, 105, 180, 0.6)'
     },
     radii: {
       none: '0',

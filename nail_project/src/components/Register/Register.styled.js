@@ -55,3 +55,49 @@ export const Button = styled.button`
 
   }
 `;
+
+export const ContainerForInputLabel = styled.div`
+  position: relative;
+  width: 350px;
+  height: 40px;
+  margin-bottom: 20px;
+`;
+export const FormInput = styled.input`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 105, 180, 0.6);
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: inherit;
+  color: green;
+  outline: none;
+  padding: 10px;
+  background: none;
+  &:hover {
+    border-color: #adffff;
+  }
+  &:focus {
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.6);
+      border: 1px solid rgba(255, 105, 180, 0.6);
+    outline: none;
+  }
+
+  &:focus + label,
+  &:not(:placeholder-shown) + label {
+    top: -9px;
+    font-size: 14px;
+    left: 20px;
+  }
+`;
+export const Label = styled.label`
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  color: gray;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background-color: #f9f9f9;
+`;

@@ -3,16 +3,12 @@ import { useAuth } from "../../hooks/useAuth";
 import * as SC from "./Form.styled";
 import { SelectTimeForm } from "../SelectTimeForm/SelectTimeForm";
 
-
-
 export const Form = ({ toggleModal, days, month }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [textArea, setTextArea] = useState("");
   const [selectOptions, setSelectedOptions] = useState("");
   const { isLoggedIn } = useAuth();
-  
-
 
   const handlerForm = (e) => {
     const { value, name } = e.target;
@@ -37,9 +33,6 @@ export const Form = ({ toggleModal, days, month }) => {
     e.preventDefault();
   };
 
-  
-
-
   return (
     <SC.WrapperForm>
       <SC.WrapperMonthDay>
@@ -49,21 +42,29 @@ export const Form = ({ toggleModal, days, month }) => {
       <SelectTimeForm days={days} month={month} />
 
       <SC.FormElement onSubmit={formSubmit}>
-        <SC.Input
-          type="text"
-          name="name"
-          placeholder="Ваше ім'я"
-          value={name}
-          onChange={handlerForm}
-        />
-        <SC.Input
-          type="tel"
-          Input
-          name="phone"
-          placeholder="Ваш номер телефону"
-          value={phone}
-          onChange={handlerForm}
-        />
+        <SC.ContainerForInputLabel>
+          <SC.FormInput
+            type="text"
+            name="name"
+            placeholder=" "
+            value={name}
+            onChange={handlerForm}
+            id="Name"
+          />
+          <SC.Label htmlFor="Name">Ваше ім'я</SC.Label>
+        </SC.ContainerForInputLabel>
+        <SC.ContainerForInputLabel>
+          <SC.FormInput
+            type="tel"
+            Input
+            name="phone"
+            placeholder=" "
+            value={phone}
+            onChange={handlerForm}
+            id="Phone"
+          />
+          <SC.Label htmlFor="Phone">Ваш номер телефону</SC.Label>
+        </SC.ContainerForInputLabel>
         <SC.Select
           id="brow"
           value={selectOptions}
@@ -77,7 +78,7 @@ export const Form = ({ toggleModal, days, month }) => {
           <option value="педикюр">педикюр</option>
         </SC.Select>
         <SC.TextArea
-          rows={5}
+          rows={3}
           value={textArea}
           name="textArea"
           placeholder="Bаші побажання"

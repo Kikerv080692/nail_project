@@ -32,35 +32,49 @@ export const SelectTimeForm = ({ days, month }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addSchedule(  { hours, minutes, days, month });
+    setHours('')
+    setMinutes('')
   };
   
-  
+ 
 
   return (
     <>
       {isLoggedIn && (
         <SC.FormTimeWrapper onSubmit={handleSubmit}>
-          <SC.Input
+          <SC.ContainerForInputLabel >
+          <SC.FormInput
             type="number"
             name="hours"
             value={hours}
             onChange={handleTime}
-            placeholder="hours"
+            placeholder=" "
+            id="hours"
           />
-          <SC.Input
+           <SC.Label htmlFor="hours" >
+              Hours
+            </SC.Label>
+          </SC.ContainerForInputLabel>
+          <SC.ContainerForInputLabel >
+          <SC.FormInput
             type="number"
             name="minutes"
             value={minutes}
             onChange={handleTime}
-            placeholder="minutes"
+            placeholder=" "
+            id="minutes"
           />
+           <SC.Label htmlFor="minutes" >
+              Minutes
+            </SC.Label>
+          </SC.ContainerForInputLabel>
           <SC.Button type="submit">Створити</SC.Button>
         </SC.FormTimeWrapper>
       )}
 
       <SC.TimeShowWrapper >
         {data?.data.map(({ hours, minutes, _id }) => (
-          <TimeItem hours={hours} minutes={minutes} id={_id} key={_id}/>
+          <TimeItem hours={hours} minutes={minutes} id={_id} key={_id} deleteTime={deleteTime}/>
         ))}
       </SC.TimeShowWrapper>
     </>

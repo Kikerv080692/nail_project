@@ -7,7 +7,7 @@ export const Input = () => {
         <SC.FormInput
           type="text"
           id="email"
-          class="form__input"
+         
           autocomplete="off"
           placeholder=" "
         />
@@ -19,7 +19,6 @@ export const Input = () => {
       <SC.FormInput
           type="text"
           id="name"
-          class="form__input"
           autocomplete="off"
           placeholder=" "
         />
