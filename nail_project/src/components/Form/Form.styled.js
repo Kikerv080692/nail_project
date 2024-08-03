@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const WrapperForm = styled.div`
-  width: 250px;
+  width: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 20px;
   background-color: ${(p) => p.theme.colors.formBackground};
-  border-radius: 10px;
+  border-radius: 20px;
 `;
 
 export const FormElement = styled.form`
@@ -57,6 +57,7 @@ export const WrapperMonthDay = styled.div`
   font-family: ${(p) => p.theme.fonts.fancy};
   color: ${(p) => p.theme.colors.headers};
   font-size: 24px;
+  margin-bottom: 20px;
   & span {
     padding-left: 10px;
   }

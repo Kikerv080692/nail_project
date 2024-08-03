@@ -23,7 +23,7 @@ export const Home = () => {
       <Nails />
       <Interesting />
       <Price />
-      <Input/>
+      {/* <Input/> */}
       <Footer />
     </div>
   );

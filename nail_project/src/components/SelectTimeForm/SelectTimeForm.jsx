@@ -4,6 +4,7 @@ import * as SC from './SelectTimeForm.styled'
 import { useAddScheduleMutation } from "../../redux/contacts/schedule";
 import {useGetScheduleQuery} from '../../redux/contacts/schedule'
 import {useDeleteScheduleTimeMutation} from '../../redux/contacts/schedule'
+import { TimeItem } from "./TimeItem";
 
 
 export const SelectTimeForm = ({ days, month }) => {
@@ -14,7 +15,7 @@ export const SelectTimeForm = ({ days, month }) => {
   const [addSchedule] = useAddScheduleMutation()
   const {data} = useGetScheduleQuery({days, month})
   const [deleteTime] = useDeleteScheduleTimeMutation()
-
+ 
 
   const handleTime = (e) => {
     const { name, value } = e.target;
@@ -32,7 +33,9 @@ export const SelectTimeForm = ({ days, month }) => {
     e.preventDefault();
     addSchedule(  { hours, minutes, days, month });
   };
-  console.log('item', item)
+  
+  
+
   return (
     <>
       {isLoggedIn && (
@@ -57,12 +60,7 @@ export const SelectTimeForm = ({ days, month }) => {
 
       <SC.TimeShowWrapper >
         {data?.data.map(({ hours, minutes, _id }) => (
-          <div key= {_id}>
-            {hours}:{minutes}
-            {isLoggedIn && <button onClick={() => deleteTime(_id)}>Delete</button>}
-           
-          </div> 
-
+          <TimeItem hours={hours} minutes={minutes} id={_id} key={_id}/>
         ))}
       </SC.TimeShowWrapper>
     </>
