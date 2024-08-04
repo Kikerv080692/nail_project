@@ -17,6 +17,7 @@ export const Overlay = styled.div`
 
 export const Inner = styled.div`
   position: absolute;
+  color: black;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);

@@ -27,14 +27,14 @@ const axiosBaseQuery =
       endpoints: (builder) => ({
         getClientInfo: builder.query({
             query:({days, month, minutes, hours}) => ({
-                 url: `/client?days=${days}&month=${month}&minutes=${minutes}&hours=${hours}`,
+                 url: `/book?days=${days}&month=${month}&minutes=${minutes}&hours=${hours}`,
                  method: "GET",
             }),
             providesTags: ["client"],
         }),
         addClient: builder.mutation({
             query: (value) => ({
-              url: "/client",
+              url: "/book",
               method: "POST",
               data: value,
             }),

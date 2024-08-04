@@ -8,7 +8,7 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const isLocation = useLocation()
-  console.log(isLocation)
+  // console.log(isLocation)
 const dispatch = useDispatch()
 
   const handleInputChange = (e) => {

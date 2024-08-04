@@ -13,6 +13,7 @@ import {
     REGISTER,
   } from 'redux-persist';
 import { scheduleApi } from './contacts/schedule';
+import { clientsApi } from './clients/clients';
 
   const middleware = getDefaultMiddleware => [
     ...getDefaultMiddleware({
@@ -20,7 +21,8 @@ import { scheduleApi } from './contacts/schedule';
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-    scheduleApi.middleware
+    scheduleApi.middleware,
+    clientsApi.middleware
   ];
 
 
@@ -34,7 +36,8 @@ import { scheduleApi } from './contacts/schedule';
   export const store = configureStore({
     reducer: {
         [authSlice.name]: persistReducer(authPersistConfig, authSlice.reducer),
-        [scheduleApi.reducerPath]: scheduleApi.reducer
+        [scheduleApi.reducerPath]: scheduleApi.reducer,
+        [clientsApi.reducerPath]: clientsApi.reducer
     },
     middleware,
     

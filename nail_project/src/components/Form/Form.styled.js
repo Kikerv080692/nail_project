@@ -133,3 +133,11 @@ export const Label = styled.label`
   transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
   background-color: #f9f9f9;
 `;
+
+export const P = styled.p`
+width: 300px;
+height: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+`

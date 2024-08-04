@@ -8,13 +8,14 @@ import { TimeItem } from "./TimeItem";
 import { useTranslation } from "react-i18next";
 
 
-export const SelectTimeForm = ({ days, month }) => {
+export const SelectTimeForm = ({ days, month, getTime }) => {
   const [hours, setHours] = useState("");
   const [minutes, setMinutes] = useState("");
   const [item, setItem] = useState([]);
   const { isLoggedIn } = useAuth();
   const [addSchedule] = useAddScheduleMutation()
   const {data} = useGetScheduleQuery({days, month})
+  console.log('data', data)
   const [deleteTime] = useDeleteScheduleTimeMutation()
  const {t} = useTranslation()
 
@@ -75,7 +76,7 @@ export const SelectTimeForm = ({ days, month }) => {
 
       <SC.TimeShowWrapper >
         {data?.data.map(({ hours, minutes, _id }) => (
-          <TimeItem hours={hours} minutes={minutes} id={_id} key={_id} deleteTime={deleteTime}/>
+          <TimeItem hours={hours} minutes={minutes} id={_id} key={_id} deleteTime={deleteTime} getTime={getTime}/>
         ))}
       </SC.TimeShowWrapper>
     </>

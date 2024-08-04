@@ -8,7 +8,7 @@ export const CastomModal = ({children, toggleModal, }) => {
   
   useEffect(() => {
     const closeModalESC = (event) => {
-      console.log(typeof event.code)
+      // console.log(typeof event.code)
       if(event.code === 'Escape'){
         toggleModal()
       }
@@ -20,8 +20,8 @@ export const CastomModal = ({children, toggleModal, }) => {
   },[])
 
 const closeOnClick = (e) => {
-console.log('target',e.target)
-console.log('current',e.currentTarget)
+// console.log('target',e.target)
+// console.log('current',e.currentTarget)
 if(e.target === e.currentTarget){
   toggleModal()
 }
@@ -30,7 +30,7 @@ if(e.target === e.currentTarget){
   return createPortal(
     <SC.Overlay onClick={closeOnClick}>
       <SC.Inner>
-        {children}name
+        {children}
         <SC.CloseBtn type='button'onClick={toggleModal}>X</SC.CloseBtn>
       </SC.Inner>
     </SC.Overlay>,
