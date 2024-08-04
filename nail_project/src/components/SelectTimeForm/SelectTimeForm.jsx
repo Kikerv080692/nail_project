@@ -5,6 +5,7 @@ import { useAddScheduleMutation } from "../../redux/contacts/schedule";
 import {useGetScheduleQuery} from '../../redux/contacts/schedule'
 import {useDeleteScheduleTimeMutation} from '../../redux/contacts/schedule'
 import { TimeItem } from "./TimeItem";
+import { useTranslation } from "react-i18next";
 
 
 export const SelectTimeForm = ({ days, month }) => {
@@ -15,7 +16,7 @@ export const SelectTimeForm = ({ days, month }) => {
   const [addSchedule] = useAddScheduleMutation()
   const {data} = useGetScheduleQuery({days, month})
   const [deleteTime] = useDeleteScheduleTimeMutation()
- 
+ const {t} = useTranslation()
 
   const handleTime = (e) => {
     const { name, value } = e.target;
@@ -68,7 +69,7 @@ export const SelectTimeForm = ({ days, month }) => {
               Minutes
             </SC.Label>
           </SC.ContainerForInputLabel>
-          <SC.Button type="submit">Створити</SC.Button>
+          <SC.Button type="submit">{t('Create')}</SC.Button>
         </SC.FormTimeWrapper>
       )}
 

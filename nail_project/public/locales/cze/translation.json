@@ -2,5 +2,18 @@
     "nav1": "Moje práce",
     "nav2": "Cena",
     "nav3": "Kontakty",
-    "header": "Dělám unikátní a pečlivou manikúru, která vašim rukám dodává krásný a upravený vzhled."
+    "header": "Dělám unikátní a pečlivou manikúru, která vašim rukám dodává krásný a upravený vzhled.",
+    "hours": "",
+    "name": "Jméno",
+    "correction": "Oprava",
+     "Expansion": "Rozšiřování",
+     "ClassicManicure": "Klasická manikúra",
+     "Gel": "Manikúra + gelový lak",
+     "Pedicure": "Pedikúra",
+     "Wishes": "Vaše přání",
+     "Confirm": "Potvrdit",
+     "Cancel": "Zrušit",
+     "Create": "Vytvořit",
+     "Works": "Práce"
+
 }

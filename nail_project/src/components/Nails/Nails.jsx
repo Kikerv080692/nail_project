@@ -2,16 +2,18 @@ import nails from "../data/nails.js";
 import Flickity from "react-flickity-component";
 import "./Nails.scss";
 import * as SC from "./Nails.styled.js";
+import {  useTranslation } from "react-i18next";
 
 const flickityOptions = {
   initialIndex: 2,
 };
 
 function Nails() {
+  const{t} = useTranslation()
   return (
     <SC.Works className="container-works">
       <SC.Title className="container-works-title">
-        <h1>Works</h1>
+        <h1>{t('Works')}</h1>
       </SC.Title>
       <div>
         <Flickity

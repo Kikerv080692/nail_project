@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
 import * as SC from "./Form.styled";
 import { SelectTimeForm } from "../SelectTimeForm/SelectTimeForm";
+import { useTranslation } from "react-i18next";
 
 export const Form = ({ toggleModal, days, month }) => {
   const [name, setName] = useState("");
@@ -9,7 +10,7 @@ export const Form = ({ toggleModal, days, month }) => {
   const [textArea, setTextArea] = useState("");
   const [selectOptions, setSelectedOptions] = useState("");
   const { isLoggedIn } = useAuth();
-
+  const { t, i18n } = useTranslation();
   const handlerForm = (e) => {
     const { value, name } = e.target;
     switch (name) {
@@ -51,7 +52,7 @@ export const Form = ({ toggleModal, days, month }) => {
             onChange={handlerForm}
             id="Name"
           />
-          <SC.Label htmlFor="Name">Ваше ім'я</SC.Label>
+          <SC.Label htmlFor="Name">{t('name')}</SC.Label>
         </SC.ContainerForInputLabel>
         <SC.ContainerForInputLabel>
           <SC.FormInput
@@ -63,7 +64,7 @@ export const Form = ({ toggleModal, days, month }) => {
             onChange={handlerForm}
             id="Phone"
           />
-          <SC.Label htmlFor="Phone">Ваш номер телефону</SC.Label>
+          <SC.Label htmlFor="Phone">+380974848539</SC.Label>
         </SC.ContainerForInputLabel>
         <SC.Select
           id="brow"
@@ -71,22 +72,22 @@ export const Form = ({ toggleModal, days, month }) => {
           name="select"
           onChange={handlerForm}
         >
-          <option value="корекція">Корекція</option>
-          <option value="нарощування">нарощування</option>
-          <option value="манікюр класичний">манікюр класичний</option>
-          <option value="манікюр +гель-лак">манікюр +гель-лак</option>
-          <option value="педикюр">педикюр</option>
+          <option value="корекція">{t('correction')}</option>
+          <option value="нарощування">{t('Expansion')}</option>
+          <option value="манікюр класичний">{t('ClassicManicure')}</option>
+          <option value="манікюр +гель-лак">{t('Gel')}</option>
+          <option value="педикюр">{t('Pedicure')}</option>
         </SC.Select>
         <SC.TextArea
           rows={3}
           value={textArea}
           name="textArea"
-          placeholder="Bаші побажання"
+          placeholder={t('Wishes')}
           onChange={handlerForm}
         ></SC.TextArea>
-        <SC.Button type="submit">Підтвердити</SC.Button>
+        <SC.Button type="submit">{t('Confirm')}</SC.Button>
         <SC.Button type="button" onClick={toggleModal}>
-          Відмінити
+          {t('Cancel')}
         </SC.Button>
       </SC.FormElement>
     </SC.WrapperForm>
