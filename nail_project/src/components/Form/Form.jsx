@@ -71,6 +71,7 @@ export const Form = ({ toggleModal, days, month }) => {
             value={name}
             onChange={handlerForm}
             id="Name"
+            required 
           />
           <SC.Label htmlFor="Name">{t('name')}</SC.Label>
         </SC.ContainerForInputLabel>
@@ -83,6 +84,7 @@ export const Form = ({ toggleModal, days, month }) => {
             value={number}
             onChange={handlerForm}
             id="Phone"
+            required 
           />
           <SC.Label htmlFor="Phone">{t('number')}</SC.Label>
         </SC.ContainerForInputLabel>
@@ -91,6 +93,7 @@ export const Form = ({ toggleModal, days, month }) => {
           value={procedures}
           name="procedures"
           onChange={handlerForm}
+          required 
         >
           <option value="корекція">{t('correction')}</option>
           <option value="нарощування">{t('Expansion')}</option>

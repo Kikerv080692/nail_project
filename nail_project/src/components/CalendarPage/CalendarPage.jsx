@@ -11,7 +11,7 @@ export const CalendarPage = () => {
   const [today, setToday] = useState(moment());
   const startDay = today.clone().startOf("month").startOf("week");
   
-  console.log("today555", startDay);
+  // console.log("today555", startDay);
   const prevHandler = () => {
     setToday((prev) => prev.clone().subtract(1, "month"));
   };

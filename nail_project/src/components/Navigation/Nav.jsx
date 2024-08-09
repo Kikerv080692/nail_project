@@ -4,6 +4,8 @@ import { Logout } from '../Logout/Logout';
 import * as SC from './Nav.styled';
 import { useTranslation } from 'react-i18next';
 import Select from 'react-select';
+import {CastomModal} from '../Modal/CastomModal'
+import { BookSchedule } from '../BookSchedule/BookSchedule';
 
 const languageOptions = [
   { value: 'en', label: 'English', icon: '../../../public/icons/britain_icon.png' },
@@ -14,6 +16,7 @@ const languageOptions = [
 function Nav() {
   const { t, i18n } = useTranslation();
   const [selectedLanguage, setSelectedLanguage] = useState(null);
+  const [isOpenModalSchedule, setIsOpenModalSchedule] = useState(false)
 
  
   useEffect(() => {
@@ -61,15 +64,21 @@ function Nav() {
     }),
   };
 
+  
   const formatOptionLabel = ({ label, icon }) => (
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <img src={icon} alt={label} style={{ width: 20, marginRight: 10 }} />
-      {label}
+      {/* {label} */}
     </div>
   );
 
+  const toggleModalSchedule = () => {
+    setIsOpenModalSchedule(!isOpenModalSchedule)
+  }
+
   return (
-    <SC.Nav className="container-navigation">
+    <>
+    <SC.Nav>
       <h4>
         <a href="#works">{t('nav1')}</a>
       </h4>
@@ -79,6 +88,10 @@ function Nav() {
       <h4>
         <a href="#contact">{t('nav3')}</a>
       </h4>
+      <h4>
+        <a href="#contact" onClick={toggleModalSchedule} >{t('nav4')}</a>
+      </h4>
+      
       {isLoggedIn && <Logout />}
       <Select
         value={selectedLanguage}
@@ -87,7 +100,10 @@ function Nav() {
         formatOptionLabel={formatOptionLabel}
         onChange={(selectedOption) => changeLanguage(selectedOption.value)}
       />
+    
     </SC.Nav>
+    {isOpenModalSchedule && <CastomModal toggleModal={toggleModalSchedule}><BookSchedule/></CastomModal>} 
+    </>
   );
 }
 

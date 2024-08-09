@@ -46,8 +46,15 @@ export const scheduleApi = createApi({
         method: 'DELETE',
       }),
       invalidatesTags: ["schedule"]
+    }),
+    getBookSchedule: builder.query({
+      query: ({days, month}) => ({
+        url: `/schedule/booked?days=${days}&month=${month}`,
+        method: "GET",
+      }),
+      providesTags: ["schedule"],
     })
   }),
 });
 
-export const { useGetScheduleQuery, useAddScheduleMutation, useDeleteScheduleTimeMutation } = scheduleApi;
+export const { useGetScheduleQuery, useAddScheduleMutation, useDeleteScheduleTimeMutation, useGetBookScheduleQuery } = scheduleApi;

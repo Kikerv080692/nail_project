@@ -9,13 +9,13 @@ export const CalendarGrid = ({ today, startDay }) => {
   
   const day = startDay.clone().subtract(0, "day");
   const daysArray = [...Array(totalDays)].map(() => day.add(1, "day").clone());
-  console.log("day", day);
+  // console.log("day", day);
 
   const isCurrentDay = (day) => {
     return moment().isSame(day, "day");
   };
 
-  console.log("currentDay", isCurrentDay);
+  // console.log("currentDay", isCurrentDay);
 
   const isSelectedMonth = () => {
     return moment().isSame(month, "month");
