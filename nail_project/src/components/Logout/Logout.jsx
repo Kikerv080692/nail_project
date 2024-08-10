@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux"
 import { logout } from "../../redux/auth/authOperation"
-
+import * as SC from './Logout.styled'
 
 export const Logout = () => {
     const dispatch = useDispatch()
@@ -10,7 +10,7 @@ export const Logout = () => {
     }
   return (
     <>
-      <button onClick={handleLogout}>Log out</button>
+      <SC.Button onClick={handleLogout}>Log out</SC.Button>
     </>
   )
 }

@@ -68,11 +68,12 @@ export const SelectTimeForm = ({ days, month, getTime }) => {
       )}
 
       <SC.TimeShowWrapper>
-        {data?.data.map(({ hours, minutes, _id }) => (
+        {data?.data.map(({ hours, minutes, _id, booked }) => (
           <TimeItem
             hours={hours}
             minutes={minutes}
             id={_id}
+            booked={booked}
             key={_id}
             deleteTime={deleteTime}
             getTime={getTime}

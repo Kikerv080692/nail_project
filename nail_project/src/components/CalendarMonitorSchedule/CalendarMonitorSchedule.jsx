@@ -6,26 +6,23 @@ import { ScheduleDays } from './ScheduleDays/ScheduleDays';
 export const CalendarMonitorSchedule = () => {
     const totalDays = 7;
     const [today, setToday] = useState(moment());
-    // const startDay = today.clone();
+    const [daySchedule, setDaySchedule] = useState([]);
+    
     moment.locale('uk');
-    // days={dayItem.format('D')} month={dayItem.format('MMMM')
-    // const day = startDay.clone().subtract(7, 'day');
-    // const daysArray = [...Array(totalDays)].map(() => day.add(1, "day").clone());
+   
     const startOfWeek = today.clone().startOf('isoWeek');
     const daysArray = [...Array(totalDays)].map((_, i) =>
         startOfWeek.clone().add(i, 'days')
     );
-    // const weekDays = moment.weekdaysShort(true);
-    // const Today = today.format('MMMM');
-    //   console.log("9", Today)
-    //   console.log('8',weekDays)
+    
     const isWeekend = (day) => {
-        const dayOfWeek = day.day(); 
-        return dayOfWeek === 0 || dayOfWeek === 6; 
+        const dayOfWeek = day.day();
+        return dayOfWeek === 0 || dayOfWeek === 6;
     };
-    // const dat = day.day()
-    // console.log("10", dat)
-
+    
+    const getDaySchedule = (value) => {
+        setDaySchedule(value);
+    };
 
     const isCurrentDay = (day) => {
         return moment().isSame(day, 'day');
@@ -40,8 +37,9 @@ export const CalendarMonitorSchedule = () => {
     const todayHandler = () => {
         setToday(moment());
     };
+    console.log('80', daySchedule);
     return (
-        <div>
+        <SC.All>
             <SC.MenuWrapper>
                 <SC.MonthWrapper>
                     <span>{today.format('MMMM')}</span>
@@ -78,9 +76,36 @@ export const CalendarMonitorSchedule = () => {
                         isCurrentDay={isCurrentDay}
                         dayItem={dayItem}
                         isWeekend={isWeekend(dayItem)}
+                        getDaySchedule={getDaySchedule}
                     />
                 ))}
             </SC.CalendarGrid>
-        </div>
+
+            {daySchedule.map(
+                ({
+                    month,
+                    days,
+                    hours,
+                    minutes,
+                    name,
+                    number,
+                    procedures,
+                    textArea,
+                }) => (
+                    <SC.MonitorData>
+                        <div>
+                            <span>{month} </span> <span>{days}</span>
+                        </div>
+                        <div>
+                            <span>{hours}</span> : <span>{minutes}</span>
+                        </div>
+                        <div>{name}</div>
+                        <div>{number}</div>
+                        <div>{procedures}</div>
+                        <div>{textArea}</div>
+                    </SC.MonitorData>
+                )
+            )}
+        </SC.All>
     );
 };

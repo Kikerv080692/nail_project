@@ -6,6 +6,8 @@ import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { useAddClientMutation } from "../../redux/clients/clients"; 
 import { CastomModal } from "../Modal/CastomModal";
+import { useGetBookScheduleQuery } from "../../redux/clients/clients";
+
 
 export const Form = ({ toggleModal, days, month }) => {
   const [name, setName] = useState("");
@@ -14,16 +16,19 @@ export const Form = ({ toggleModal, days, month }) => {
   const [procedures, setProcedures] = useState("");
   const { isLoggedIn } = useAuth();
   const { t, i18n } = useTranslation();
-  const dispatch = useDispatch()
   const [addClient] = useAddClientMutation()
   const [hours, setHours] = useState('')
   const [minutes, setMinutes] = useState('')
   const [openModalAfterSubmit, setOpenModalAfterSubmit] = useState(false)
+  const {data} = useGetBookScheduleQuery({days, month})
+  console.log('5', data)
 
   const getTime = (hours, minutes) => {
     setHours(hours)
     setMinutes(minutes)
   }
+
+  
 
   const handlerForm = (e) => {
     const { value, name } = e.target;

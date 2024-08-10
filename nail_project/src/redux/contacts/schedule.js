@@ -57,4 +57,4 @@ export const scheduleApi = createApi({
   }),
 });
 
-export const { useGetScheduleQuery, useAddScheduleMutation, useDeleteScheduleTimeMutation, useGetBookScheduleQuery } = scheduleApi;
+export const { useGetScheduleQuery, useAddScheduleMutation, useDeleteScheduleTimeMutation  } = scheduleApi;

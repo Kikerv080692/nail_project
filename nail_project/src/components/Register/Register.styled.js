@@ -29,7 +29,7 @@ export const Input = styled.input`
   margin-bottom: 15px;
   border: 1px solid rgba(255, 105, 180, 0.6);
   border-radius: 5px;
-  transition: box-shadow 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   &:focus{
     outline: none;
@@ -47,12 +47,12 @@ export const Button = styled.button`
   color: white;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease 0.2s;
 
   &:hover {
     background-color: #45a049;
-    box-shadow: 0 4px 12px rgba(80, 150, 90, 0.6);
-
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    transform: translateY(-2px);
   }
 `;
 

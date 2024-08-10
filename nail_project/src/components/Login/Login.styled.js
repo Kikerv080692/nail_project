@@ -31,9 +31,6 @@ export const Input = styled.input`
   border-radius: 5px;
   border: 1px solid rgba(255, 105, 180, 0.6);
   transition: box-shadow 0.3s ease-in-out;
-  &::placeholder {
-    transition: opacity 0.5s;
-  }
   &:focus {
     box-shadow: 0 4px 12px rgba(255, 105, 180, 0.6);
       border: 1px solid rgba(255, 105, 180, 0.6);
@@ -50,9 +47,12 @@ export const Button = styled.button`
   color: white;
   font-size: 16px;
   cursor: pointer;
+  transition: all 0.3s ease 0.1s;
 
   &:hover {
     background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
   }
 `;
 

@@ -40,7 +40,14 @@ const axiosBaseQuery =
             }),
             invalidatesTags: ["client"],
           }),
+          getBookSchedule: builder.query({
+            query: ({days, month}) => ({
+              url: `/book/booked?days=${days}&month=${month}`,
+              method: "GET",
+            }),
+            providesTags: ["schedule"],
+          })
       })
   })
 
-  export const {useGetClientInfoQuery, useAddClientMutation } = clientsApi
+  export const {useGetClientInfoQuery, useAddClientMutation, useGetBookScheduleQuery } = clientsApi

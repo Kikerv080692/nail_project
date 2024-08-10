@@ -66,10 +66,10 @@ function Nav() {
 
   
   const formatOptionLabel = ({ label, icon }) => (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <SC.DIV style={{ display: 'flex', alignItems: 'center' }}>
       <img src={icon} alt={label} style={{ width: 20, marginRight: 10 }} />
       {/* {label} */}
-    </div>
+    </SC.DIV>
   );
 
   const toggleModalSchedule = () => {

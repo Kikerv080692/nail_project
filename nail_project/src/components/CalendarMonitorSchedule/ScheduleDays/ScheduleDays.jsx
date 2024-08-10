@@ -1,23 +1,22 @@
-import { useGetBookScheduleQuery } from '../../../redux/contacts/schedule';
+import { useGetBookScheduleQuery } from '../../../redux/clients/clients';
 import * as SC from './ScheduleDays.styled'
 
-export  const ScheduleDays = ({ isCurrentDay, dayItem, isWeekend}) => {
+export  const ScheduleDays = ({ isCurrentDay, dayItem, isWeekend, getDaySchedule}) => {
   const { data } = useGetBookScheduleQuery({ days: dayItem.format('D'), month: dayItem.format('MMMM') });
 
+const handleClick = () => {
+  getDaySchedule(data?.data)
+}
   return (
-    <SC.CellWrapper isWeekend={isWeekend}>
-    <div onClick={null}>
+    <SC.CellWrapper isWeekend={isWeekend} onClick={handleClick}>
+    <div >
       {isCurrentDay(dayItem) ? (
         <SC.CurrentDay>{dayItem.format("D")}</SC.CurrentDay>
       ) : (
         dayItem.format("D")
       )}
     </div>
-    {data?.data.map(({month, days, hours, minutes, name, number, procedures, textArea}) => {
-        <div>
-            <div><span>{month} </span> <span>{days}</span></div>   
-        </div>
-    })}
+   
   </SC.CellWrapper>
   )
 }

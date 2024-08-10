@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-
+export const All = styled.div`
+width: 400px;
+padding: 10px 25px;
+`
 
 export const MenuWrapper = styled.div`
  display: flex;
   justify-content: space-between;
-  /* background: ${p => p.theme.colors.backForCalendar}; */
-  /* color: ${p => p.theme.colors.backForColor}; */
   padding: 12px 10px;
   align-items: center;
 `
@@ -50,7 +51,16 @@ export const CalendarGrid = styled.div`
   max-width: 100%;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(6, 1fr);
   gap: 5px;
   padding-left: 10px;
+  margin-bottom: 30px;
+  
 `;
+
+export const MonitorData = styled.div`
+border: 2px solid black;
+border-radius: 8px;
+padding: 10px;
+background: green;
+margin-bottom: 10px;
+`
