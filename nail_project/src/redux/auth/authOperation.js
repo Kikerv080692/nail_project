@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost:4000/api'
+axios.defaults.baseURL = 'https://backendfornails.onrender.com/api'
 
 const setAuthHeaders = (token) => {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`

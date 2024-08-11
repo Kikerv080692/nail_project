@@ -10,7 +10,7 @@ export const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const location = useLocation();
-  // console.log(location);
+ 
   const handleInputChange = (e) => {
     const { value, name } = e.target;
     switch (name) {

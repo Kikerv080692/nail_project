@@ -1,37 +1,24 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
-    <title>Nail</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <div id="modal-root"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+    rel="stylesheet">
+
+  <title>Nail</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <div id="modal-root"></div>
 
 
-    <!-- <div>
-      <ul>
-        {[...Array(7)].map((_, index) => (
-          <li key={index}>
-            <span>
-              {moment()
-                .day(index + 1)
-                .format("ddd")
-                .toUpperCase()}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <div>
-        {daysArray.map((dayItem) => (
-          <CalendarDays isCurrentDay={isCurrentDay} dayItem={dayItem} />
-        ))}
-      </div>
-    </div> -->
+  <script type="module" src="/src/main.jsx"></script>
+</body>
 
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
 </html>

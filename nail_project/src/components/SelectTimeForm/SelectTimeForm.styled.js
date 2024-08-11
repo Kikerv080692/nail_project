@@ -47,7 +47,7 @@ export const Button = styled.button`
   }
 `;
 
-export const TimeContainer = styled.button`
+export const TimeContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,15 +56,15 @@ export const TimeContainer = styled.button`
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border: ${p => {
-    if(p.isCheckTime){
+    if(p.$isCheckTime){
       return '2px solid red'
     }
-    if(p.isCheck){
+    if(p.$isCheck){
       return "2px solid green"
     }
     return 'none'
     } };
-  opacity: ${p => p.isCheckTime ? '0.5' : '1'};
+  opacity: ${p => p.$isCheckTime ? '0.5' : '1'};
 
 `;
 

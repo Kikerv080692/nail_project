@@ -72,7 +72,7 @@ export const CalendarMonitorSchedule = () => {
             <SC.CalendarGrid>
                 {daysArray.map((dayItem, index) => (
                     <ScheduleDays
-                        key={dayItem.unix()}
+                        key={index}
                         isCurrentDay={isCurrentDay}
                         dayItem={dayItem}
                         isWeekend={isWeekend(dayItem)}

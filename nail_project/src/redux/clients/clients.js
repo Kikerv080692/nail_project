@@ -21,7 +21,7 @@ const axiosBaseQuery =
   export const clientsApi = createApi ({
     reducerPath: 'client',
     baseQuery: axiosBaseQuery({
-        baseUrl: "http://localhost:4000/api",
+        baseUrl: "https://backendfornails.onrender.com/api",
       }),
       tagTypes: ['client'],
       endpoints: (builder) => ({
@@ -32,20 +32,12 @@ const axiosBaseQuery =
             }),
             providesTags: ["client"],
         }),
-        addClient: builder.mutation({
-            query: (value) => ({
-              url: "/book",
-              method: "POST",
-              data: value,
-            }),
-            invalidatesTags: ["client"],
-          }),
           getBookSchedule: builder.query({
             query: ({days, month}) => ({
               url: `/book/booked?days=${days}&month=${month}`,
               method: "GET",
             }),
-            providesTags: ["schedule"],
+            providesTags: ["client"],
           })
       })
   })

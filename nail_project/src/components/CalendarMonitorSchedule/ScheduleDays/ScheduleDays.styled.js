@@ -13,5 +13,5 @@ export const CellWrapper = styled.div`
   min-width: 15px;
   min-height: 15px;
   cursor: pointer;
-  color: ${p => p.isWeekend ? 'red' : 'black'};
+  color: ${p => p.$isWeekend ? 'red' : 'black'};
 `

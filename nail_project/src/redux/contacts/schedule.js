@@ -21,7 +21,7 @@ const axiosBaseQuery =
 export const scheduleApi = createApi({
   reducerPath: "schedule",
   baseQuery: axiosBaseQuery({
-    baseUrl: "http://localhost:4000/api",
+    baseUrl: "https://backendfornails.onrender.com/api",
   }),
   tagTypes: ["schedule"],
   endpoints: (builder) => ({
@@ -53,8 +53,16 @@ export const scheduleApi = createApi({
         method: "GET",
       }),
       providesTags: ["schedule"],
-    })
+    }),
+    addClient: builder.mutation({
+      query: (value) => ({
+        url: "/book",
+        method: "POST",
+        data: value,
+      }),
+      invalidatesTags: ["schedule"],
+    }),
   }),
 });
 
-export const { useGetScheduleQuery, useAddScheduleMutation, useDeleteScheduleTimeMutation  } = scheduleApi;
+export const { useGetScheduleQuery, useAddScheduleMutation, useDeleteScheduleTimeMutation, useAddClientMutation } = scheduleApi;

@@ -56,7 +56,7 @@ export const Button = styled.button`
   }
 `;
 
-export const ContainerForInputLabel = styled.div`
+export const ContainerForLabel = styled.div`
   position: relative;
   width: 350px;
   height: 40px;

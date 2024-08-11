@@ -8,7 +8,7 @@ const handleClick = () => {
   getDaySchedule(data?.data)
 }
   return (
-    <SC.CellWrapper isWeekend={isWeekend} onClick={handleClick}>
+    <SC.CellWrapper $isWeekend={isWeekend} onClick={handleClick}>
     <div >
       {isCurrentDay(dayItem) ? (
         <SC.CurrentDay>{dayItem.format("D")}</SC.CurrentDay>

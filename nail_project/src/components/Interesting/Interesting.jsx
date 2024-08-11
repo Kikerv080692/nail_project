@@ -1,38 +1,27 @@
-
 import * as SC from './Interesting.styled'
+import { useTranslation } from "react-i18next";
 
 export const Interesting = () => {
+  const { t } = useTranslation();
   return (
     <SC.Section>
       <SC.WrapperFirst>
-        <SC.Header>Советы для красивых и здоровых ногтей
-        <h3>Обрезать кутикулу</h3>
-        <p>
-          «Не обрезать, а сдвигать», — это правило повторяют все нейл-мастера
-          уже много лет, а женщины успешно его игнорируют, вредя самим себе. Чем
-          чаще обрабатывать кутикулу, тем быстрее она будет нарастать и тем
-          грубее она будет. Чтобы сделать ее мягче, используйте масла, которые
-          не только увлажняют и питают кожу, но и замедляют рост кутикулы.
-        </p>
-
+        <SC.Header>
+          <h2>{t('text1')}</h2>
         </SC.Header>
+        <h3>{t('text2')}</h3>
+        <p>{t('text3')}</p>
       </SC.WrapperFirst>
       <div>
-        <SC.Header>Интересные факты про маникюр</SC.Header>
-        <SC.TextWrapper >
-          <p>Ногтевая пластина может востановится только за 4 месяца</p>
+        <SC.Header>{t('text4')}</SC.Header>
+        <SC.TextWrapper>
+          <p>{t('text4.1')}</p>
         </SC.TextWrapper>
-        <SC.TextWrapper >
-          <p>
-            Все вещества которые используются для роста ногтей необходимо
-            наносить на кутикулу. Посколько там происходит рост ногтя
-          </p>
+        <SC.TextWrapper>
+          <p>{t('text4.2')}</p>
         </SC.TextWrapper>
-        <SC.TextWrapper >
-          <p>
-            При долгом контакте с горячей водою. Ногтевая пластина размокает и
-            сцепка между ногтем и покрытием лаком ослабивает
-          </p>
+        <SC.TextWrapper>
+          <p>{t('text4.3')}</p>
         </SC.TextWrapper>
       </div>
     </SC.Section>

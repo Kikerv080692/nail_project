@@ -8,7 +8,7 @@ export const CastomModal = ({children, toggleModal, }) => {
   
   useEffect(() => {
     const closeModalESC = (event) => {
-      // console.log(typeof event.code)
+    
       if(event.code === 'Escape'){
         toggleModal()
       }
@@ -20,8 +20,7 @@ export const CastomModal = ({children, toggleModal, }) => {
   },[])
 
 const closeOnClick = (e) => {
-// console.log('target',e.target)
-// console.log('current',e.currentTarget)
+
 if(e.target === e.currentTarget){
   toggleModal()
 }

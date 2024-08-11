@@ -5,18 +5,20 @@ export const Section = styled.section`
  padding-left: 20px;
 `
 
-export const Header = styled.h2`
+export const Header = styled.div`
 margin-bottom: 20px;
 color: ${p => p.theme.colors.headers};
-font-family: ${p => p.theme.fonts.fancy};
+font-family: ${p => p.theme.fonts.Garamond};
 font-size: ${p => p.theme.fontSizes.l}px;
+
 h3 {
     font-size: ${p => p.theme.fontSizes.ml}px;
     margin-bottom: 10px;
     color: white;
-    font-family: sans-serif;
+    font-family: ${p => p.theme.fonts.Garamond};
 }
 p{
+    font-family: ${p => p.theme.fonts.Garamond};
     color: white;
     font-size: ${p => p.theme.fontSizes.ml}px;
 }

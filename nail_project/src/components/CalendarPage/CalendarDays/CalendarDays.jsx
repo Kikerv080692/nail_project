@@ -1,18 +1,18 @@
-import { useAuth } from "../../../hooks/useAuth";
+
 import { useState } from "react";
 import * as SC from './CalendarDays.styled'
 import { CastomModal } from "../../Modal/CastomModal";
 import { Form } from "../../Form/Form";
 
 export const CalendarDays = ({ isCurrentDay, dayItem}) => {
-  const { isLoggedIn } = useAuth();
+
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const toggleModal = () => {
     setIsOpenModal(!isOpenModal)
     ;
   };
-// console.log('888',dayItem.format('D'))
+
 
   return (
     <SC.CellWrapper >

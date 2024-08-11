@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { useAuth } from "../../hooks/useAuth";
 import * as SC from "./Form.styled";
 import { SelectTimeForm } from "../SelectTimeForm/SelectTimeForm";
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
-import { useAddClientMutation } from "../../redux/clients/clients"; 
+
 import { CastomModal } from "../Modal/CastomModal";
-import { useGetBookScheduleQuery } from "../../redux/clients/clients";
+import { useAddClientMutation } from "../../redux/contacts/schedule";
 
 
 export const Form = ({ toggleModal, days, month }) => {
@@ -14,21 +12,16 @@ export const Form = ({ toggleModal, days, month }) => {
   const [number, setNumber] = useState("");
   const [textArea, setTextArea] = useState("");
   const [procedures, setProcedures] = useState("");
-  const { isLoggedIn } = useAuth();
   const { t, i18n } = useTranslation();
   const [addClient] = useAddClientMutation()
   const [hours, setHours] = useState('')
   const [minutes, setMinutes] = useState('')
   const [openModalAfterSubmit, setOpenModalAfterSubmit] = useState(false)
-  const {data} = useGetBookScheduleQuery({days, month})
-  console.log('5', data)
-
+ 
   const getTime = (hours, minutes) => {
     setHours(hours)
     setMinutes(minutes)
   }
-
-  
 
   const handlerForm = (e) => {
     const { value, name } = e.target;
@@ -49,9 +42,9 @@ export const Form = ({ toggleModal, days, month }) => {
     }
   };
 
-  const formSubmit =  (e) => {
+  const formSubmit =  async (e) => {
     e.preventDefault();
-    addClient({days, month, name, number, hours, minutes, procedures})
+    await addClient({days, month, name, number, hours, minutes, procedures, wishes: textArea})
     setOpenModalAfterSubmit(true)
     setName('')
     setNumber('')
@@ -69,7 +62,7 @@ export const Form = ({ toggleModal, days, month }) => {
 
       <SC.FormElement onSubmit={formSubmit}>
         <SC.ContainerForInputLabel>
-          <SC.FormInput
+          <SC.FormText
             type="text"
             name="name"
             placeholder=" "
@@ -81,7 +74,7 @@ export const Form = ({ toggleModal, days, month }) => {
           <SC.Label htmlFor="Name">{t('name')}</SC.Label>
         </SC.ContainerForInputLabel>
         <SC.ContainerForInputLabel>
-          <SC.FormInput
+          <SC.FormText
             type="tel"
             Input
             name="number"
@@ -113,10 +106,10 @@ export const Form = ({ toggleModal, days, month }) => {
           placeholder={t('Wishes')}
           onChange={handlerForm}
         ></SC.TextArea>
-        <SC.Button disabled={name === '' || number === '' || procedures === '' || minutes === ''} type="submit">{t('Confirm')}</SC.Button>
-        <SC.Button type="button" onClick={toggleModal}>
+        <SC.Btn disabled={name === '' || number === '' || procedures === '' || minutes === ''} type="submit">{t('Confirm')}</SC.Btn>
+        <SC.Btn type="button" onClick={toggleModal}>
           {t('Cancel')}
-        </SC.Button>
+        </SC.Btn>
       </SC.FormElement>
       {openModalAfterSubmit && (
         <CastomModal toggleModal={toggleModal}><SC.P>{t('submit')}</SC.P></CastomModal>)

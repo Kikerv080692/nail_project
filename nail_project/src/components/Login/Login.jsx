@@ -8,7 +8,7 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const isLocation = useLocation()
-  // console.log(isLocation)
+ 
 const dispatch = useDispatch()
 
   const handleInputChange = (e) => {
@@ -36,7 +36,7 @@ return (
   isLocation.pathname === '/login' ?
   <SC.Container>
   <SC.Form onSubmit={handleSubmit} >
-  <SC.ContainerForInputLabel>
+  <SC.ContainerForLabel>
             <SC.FormInput
               type="text"
               autoComplete="off"
@@ -49,8 +49,8 @@ return (
             <SC.Label htmlFor="Email" >
               Email
             </SC.Label>
-          </SC.ContainerForInputLabel>
-          <SC.ContainerForInputLabel >
+          </SC.ContainerForLabel>
+          <SC.ContainerForLabel >
             <SC.FormInput
               type="password"
               autoComplete="off"
@@ -63,9 +63,7 @@ return (
             <SC.Label htmlFor="Password" >
               Password
             </SC.Label>
-          </SC.ContainerForInputLabel>
-    {/* <SC.Input type="text" placeholder="Email" name="Email" value={email} onChange={handleInputChange} />
-    <SC.Input type="text" placeholder="Password" name="Password" value={password} onChange={handleInputChange} /> */}
+          </SC.ContainerForLabel>
     <SC.Button type='submit'>Log in</SC.Button>
   </SC.Form>
   <NavLink to="/">Home</NavLink>

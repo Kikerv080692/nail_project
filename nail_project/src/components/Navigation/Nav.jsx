@@ -7,6 +7,7 @@ import Select from 'react-select';
 import {CastomModal} from '../Modal/CastomModal'
 import { BookSchedule } from '../BookSchedule/BookSchedule';
 
+
 const languageOptions = [
   { value: 'en', label: 'English', icon: '../../../public/icons/britain_icon.png' },
   { value: 'uk', label: 'Українська', icon: '../../../public/icons/n_ukraine_ico.png' },
@@ -17,7 +18,7 @@ function Nav() {
   const { t, i18n } = useTranslation();
   const [selectedLanguage, setSelectedLanguage] = useState(null);
   const [isOpenModalSchedule, setIsOpenModalSchedule] = useState(false)
-
+  const [isNavOpen, setIsNavOpen] = useState(false);
  
   useEffect(() => {
     const savedLanguage = localStorage.getItem('language');
@@ -75,10 +76,14 @@ function Nav() {
   const toggleModalSchedule = () => {
     setIsOpenModalSchedule(!isOpenModalSchedule)
   }
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
 
   return (
     <>
-    <SC.Nav>
+    <SC.Nav $isNavOpen={isNavOpen}>
+      <SC.Navmenu $isNavOpen={isNavOpen}>
       <h4>
         <a href="#works">{t('nav1')}</a>
       </h4>
@@ -89,8 +94,11 @@ function Nav() {
         <a href="#contact">{t('nav3')}</a>
       </h4>
       <h4>
-        <a href="#contact" onClick={toggleModalSchedule} >{t('nav4')}</a>
+        <a href="#" onClick={toggleModalSchedule} >{t('nav4')}</a>
       </h4>
+
+      </SC.Navmenu>
+      
       
       {isLoggedIn && <Logout />}
       <Select
@@ -100,7 +108,25 @@ function Nav() {
         formatOptionLabel={formatOptionLabel}
         onChange={(selectedOption) => changeLanguage(selectedOption.value)}
       />
-    
+       <SC.A
+            href="#nav"
+            className={`nav__toggle ${isNavOpen ? 'nav__toggle--open' : ''}`}
+            role="button"
+            aria-controls="menu"
+            onClick={toggleNav}
+            $isNavOpen={isNavOpen}
+          >
+            <SC.MenuIcon className="menuicon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+              <title>Toggle Menu</title>
+              <g>
+                <line className="menuicon__bar" x1="13" y1="16.5" x2="37" y2="16.5"/>
+                <line className="menuicon__bar" x1="13" y1="24.5" x2="37" y2="24.5"/>
+                <line className="menuicon__bar" x1="13" y1="24.5" x2="37" y2="24.5"/>
+                <line className="menuicon__bar" x1="13" y1="32.5" x2="37" y2="32.5"/>
+                <circle className="menuicon__circle" r="23" cx="25" cy="25" />
+              </g>
+            </SC.MenuIcon>
+          </SC.A>
     </SC.Nav>
     {isOpenModalSchedule && <CastomModal toggleModal={toggleModalSchedule}><BookSchedule/></CastomModal>} 
     </>

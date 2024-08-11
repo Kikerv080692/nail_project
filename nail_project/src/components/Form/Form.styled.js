@@ -19,25 +19,8 @@ export const FormElement = styled.form`
   gap: 10px;
 `;
 
-export const Input = styled.input`
-  margin-top: 10px;
-  padding: 10px;
-  border: 1px solid ${(p) => p.theme.colors.inputBorder};
-  border-radius: 5px;
-  &:focus {
-    &:focus {
-    border-color: ${p => p.theme.colors.focusInput};
-    outline: none;
-    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
-  }
-  }
-  @media (min-width: 1024px) {
-    margin-top: 10px;
-    
-  }
-`;
 
-export const Button = styled.button`
+export const Btn = styled.button`
   background: ${(p) => p.theme.colors.backForButton};
   color: white;
   border: none;
@@ -94,7 +77,7 @@ export const ContainerForInputLabel = styled.div`
   height: 40px;
   margin-bottom: 15px;
 `;
-export const FormInput = styled.input`
+export const FormText = styled.input`
   position: absolute;
   top: 0;
   left: 0;

@@ -8,8 +8,8 @@ import Nav from "../../components/Navigation/Nav";
 import { Register } from "../../components/Register/Register";
 import Price from "../../components/Price/Price.jsx";
 import { CalendarPage } from "../../components/CalendarPage/CalendarPage.jsx"
-import BurgerMenu from "../../components/BurgerMenu/BurgerMenu.jsx";
-// import NavToggle from "../../components/BurgerMenu/NavToggle/NavToggle.jsx";
+
+
 
 
 export const Home = () => {
@@ -21,12 +21,9 @@ export const Home = () => {
       <Nav />
       <Header />
       <CalendarPage />
-      <BurgerMenu/>
       <Nails />
       <Interesting />
-      {/* <NavToggle/> */}
       <Price />
-      
       <Footer />
     </div>
   );

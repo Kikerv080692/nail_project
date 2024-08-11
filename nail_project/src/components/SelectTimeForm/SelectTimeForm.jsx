@@ -1,16 +1,15 @@
 import { useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
 import * as SC from './SelectTimeForm.styled';
-import { useAddScheduleMutation } from '../../redux/contacts/schedule';
-import { useGetScheduleQuery } from '../../redux/contacts/schedule';
-import { useDeleteScheduleTimeMutation } from '../../redux/contacts/schedule';
+import { useAddScheduleMutation, useDeleteScheduleTimeMutation, useGetScheduleQuery } from '../../redux/contacts/schedule';
+
+
 import { TimeItem } from './TimeItem';
 import { useTranslation } from 'react-i18next';
 
 export const SelectTimeForm = ({ days, month, getTime }) => {
   const [hours, setHours] = useState('');
   const [minutes, setMinutes] = useState('');
-  const [item, setItem] = useState([]);
   const { isLoggedIn } = useAuth();
   const [addSchedule] = useAddScheduleMutation();
   const { data } = useGetScheduleQuery({ days, month });
